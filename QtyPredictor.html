@@ -1,13 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Logistics quantity Predictor</title>
-    <script
-	type="module"
-	src="https://gradio.s3-us-west-2.amazonaws.com/4.43.0/gradio.js"
-></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Quantity Predictor</title>
+    
+    <!-- External stylesheet for modern fonts and design -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff8c00, #ffcc66);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .gradio-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
+
 <body>
-    <gradio-app src="https://poramad-prediction-qty.hf.space"></gradio-app>
+    <div class="container">
+        <div class="header">
+            <h1>Logistics Quantity Predictor</h1>
+        </div>
+
+        <div class="content">
+            <h2>Predict logistics quantities effortlessly</h2>
+            <p>
+                Welcome to our logistics quantity predictor! This tool helps you predict and manage logistics quantities with advanced AI. Just input your data and let the system handle the rest.
+            </p>
+
+            <div class="gradio-container">
+                <gradio-app src="https://poramad-prediction-qty.hf.space"></gradio-app>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Logistics Quantity Predictor | Designed with care.
+    </footer>
 </body>
+
 </html>
