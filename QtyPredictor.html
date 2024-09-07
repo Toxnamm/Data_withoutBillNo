@@ -4,7 +4,7 @@
     <title>Logistics Quantity Predictor</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', sans-serif;
             background-color: #000; /* พื้นหลังสีดำ */
             margin: 0;
             padding: 0;
@@ -18,31 +18,45 @@
             width: 100%;
         }
 
-        .left, .right {
-            width: 50%; /* แบ่งครึ่งหน้าจอ */
+        .left {
+            width: 35%; /* 35% ของหน้าจอ */
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-        }
-
-        .left {
             background-color: #222; /* สีพื้นของฝั่งซ้าย */
         }
 
         .right {
+            width: 65%; /* 65% ของหน้าจอ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
             background-color: #333; /* สีพื้นของฝั่งขวา */
         }
 
-        h1 {
+        .title {
+            text-align: center; /* จัดให้อยู่ตรงกลาง */
+        }
+
+        .title h1 {
             color: #fff;
             font-size: 2.5rem;
-            text-align: center;
+            margin: 0; /* เอาขอบด้านบนและล่างออก */
+        }
+
+        .title::after {
+            content: ''; /* สร้างเส้นใต้ */
+            display: block;
+            margin: 20px auto 0; /* เว้นระยะห่างจากข้อความ */
+            width: 30%; /* กำหนดความกว้างของเส้นตามที่ต้องการ (เช่น 70% ของพื้นที่) */
+            border-bottom: 2px solid #fff; /* ความหนาและสีของเส้น */
         }
 
         gradio-app {
             width: 100%;
-            max-width: 1000px;
+            max-width: 2000px;
             box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
             border-radius: 10px;
         }
@@ -56,7 +70,9 @@
     <div class="container">
         <!-- ส่วนซ้าย: หัวข้อ -->
         <div class="left">
-            <h1>Logistics Quantity Predictor</h1>
+            <div class="title">
+                <h1>Logistics Quantity Predictor</h1>
+            </div>
         </div>
 
         <!-- ส่วนขวา: ฟอร์มกรอกข้อมูล -->
