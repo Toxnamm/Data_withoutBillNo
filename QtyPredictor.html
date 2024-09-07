@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Logistics quantity Predictor</title>
+    <title>Logistics Quantity Predictor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000; /* พื้นหลังสีดำ */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            color: #fff; /* ข้อความสีขาว */
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .left, .right {
+            width: 50%; /* แบ่งครึ่งหน้าจอ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .left {
+            background-color: #222; /* สีพื้นของฝั่งซ้าย */
+        }
+
+        .right {
+            background-color: #333; /* สีพื้นของฝั่งขวา */
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        gradio-app {
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+    </style>
     <script
 	type="module"
 	src="https://gradio.s3-us-west-2.amazonaws.com/4.43.0/gradio.js"
 ></script>
 </head>
 <body>
-    <gradio-app src="https://poramad-prediction-qty.hf.space"></gradio-app>
+    <div class="container">
+        <!-- ส่วนซ้าย: หัวข้อ -->
+        <div class="left">
+            <h1>Logistics Quantity Predictor</h1>
+        </div>
+
+        <!-- ส่วนขวา: ฟอร์มกรอกข้อมูล -->
+        <div class="right">
+            <gradio-app src="https://poramad-prediction-qty.hf.space"></gradio-app>
+        </div>
+    </div>
 </body>
 </html>
