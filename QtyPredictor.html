@@ -5,64 +5,65 @@
     <style>
         body {
             font-family: 'Georgia', sans-serif;
-            background-color: #000; /* พื้นหลังสีดำ */
+            background-color: #000;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column; /* เปลี่ยนเป็นแสดงแบบคอลัมน์ */
             height: 100vh;
-            color: #fff; /* ข้อความสีขาว */
+            color: #fff;
         }
 
         .container {
             display: flex;
+            flex-direction: column; /* แสดงคอลัมน์ */
             width: 100%;
         }
 
-        .left {
-            width: 35%; /* 35% ของหน้าจอ */
+        .top {
+            height: 35%; /* 35% ของความสูง */
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            background-color: #222; /* สีพื้นของฝั่งซ้าย */
+            background-color: #222;
         }
 
-        .right {
-            width: 65%; /* 65% ของหน้าจอ */
+        .bottom {
+            height: 65%; /* 65% ของความสูง */
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            background-color: #333; /* สีพื้นของฝั่งขวา */
+            background-color: #333;
         }
 
         .title {
-            text-align: center; /* จัดให้อยู่ตรงกลาง */
+            text-align: center;
         }
 
         .title h1 {
             color: #fff;
             font-size: 2rem;
-            margin: 0; /* เอาขอบด้านบนและล่างออก */
+            margin: 0;
         }
 
         .title::after {
-            content: ''; /* สร้างเส้นใต้ */
+            content: '';
             display: block;
-            margin: 20px auto 0; /* เว้นระยะห่างจากข้อความ */
-            width: 30%; /* กำหนดความกว้างของเส้นตามที่ต้องการ (เช่น 70% ของพื้นที่) */
-            border-bottom: 2px solid #fff; /* ความหนาและสีของเส้น */
+            margin: 20px auto 0;
+            width: 30%;
+            border-bottom: 2px solid #fff;
         }
 
-        /* เพิ่มการตกแต่งให้กับ gradio-app */
         gradio-app {
             width: 100%;
-            max-width: 1200px; /* กำหนดขนาดให้เล็กลงเพื่อความสวยงาม */
-            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.3); /* เพิ่มเงาสำหรับความลึก */
-            border-radius: 15px; /* ขอบมนมากขึ้น */
-            border: 2px solid #555; /* เพิ่มขอบที่ดูเด่นขึ้น */
-            padding: 20px; /* เพิ่มระยะขอบภายใน */
-            background-color: #444; /* พื้นหลังให้กลมกลืน */
+            max-width: 1200px;
+            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            border: 2px solid #555;
+            padding: 20px;
+            background-color: #444;
         }
 
     </style>
@@ -73,17 +74,18 @@
 </head>
 <body>
     <div class="container">
-        <!-- ส่วนซ้าย: หัวข้อ -->
-        <div class="left">
+        <!-- ส่วนบน: หัวข้อ -->
+        <div class="top">
             <div class="title">
                 <h1>Logistics Quantity Predictor</h1>
             </div>
         </div>
 
-        <!-- ส่วนขวา: ฟอร์มกรอกข้อมูล -->
-        <div class="right">
+        <!-- ส่วนล่าง: ฟอร์มกรอกข้อมูล -->
+        <div class="bottom">
             <gradio-app src="https://poramad-prediction-qty.hf.space"></gradio-app>
         </div>
     </div>
 </body>
 </html>
+
